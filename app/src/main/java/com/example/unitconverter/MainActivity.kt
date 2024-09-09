@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             UnitConverterTheme {
-                // A ji surface container using the 'background' color from the theme
+                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -149,6 +149,7 @@ fun UnitConverter() {
                     Icon(Icons.Default.ArrowDropDown, contentDescription = "Arrow down")
                 }
             }
+            //Dropdown menu for the outbox box
             DropdownMenu(expanded = oExpanded, onDismissRequest = { oExpanded = false }) {
                 DropdownMenuItem(
                     text = { Text(text = "Centimeters")},
@@ -188,9 +189,9 @@ fun UnitConverter() {
                 )
             }
         }
-        Spacer(modifier = Modifier.height(16.dp)) // Applying space bw buttons and the result text below
+        Spacer(modifier = Modifier.height(16.dp)) // Applying space between buttons and the result text below
         Text(text = "Result : $inputValue $inputUnit = $outputValue $outputUnit")
-        //Button to reset the result value
+        //Button to reset the result value and the Input text field.
         Button(onClick = {
             outputValue = ""
             inputValue = ""
